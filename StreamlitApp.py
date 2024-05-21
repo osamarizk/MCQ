@@ -10,10 +10,14 @@ from src.mcqgenerator.MCQGENERATOR import generate_evaluate_chain
 from src.mcqgenerator.logger import logging
 import time
 
-# Loading JSON File
-with open('E:\Python-27122023\Learning\MCQ\Response.json', 'r') as file:
-    Response_JSON=json.loads(file.read())
 
+# Construct the relative file path
+current_dir = os.path.dirname(__file__)
+file_path = os.path.join(current_dir, 'json-respone', 'Response.json')
+
+# Loading JSON File
+with open(file_path, 'r') as file:
+    Response_JSON=json.loads(file.read())
 # creating Title
 st.title("MCQs Creator Application with LangChain")
 
